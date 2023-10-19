@@ -1,0 +1,4 @@
+$servername = "79.98.104.6";
+$username = "miagodco_toncho";
+$password = "SclGGtN1AY";
+$dbname = "miagodco_customnews";
