@@ -41,16 +41,16 @@
 
   <div class="container">
 
-    <form class="login-form" action="includes/form_handler/register.php">
+    <form class="login-form" action="includes/form_handler/register.php" method="post">
       <div class="login-wrap">
         <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_profile"></i></span>
-          <input type="text" name="firstname" class="form-control" placeholder="Firstname" autofocus>
+          <input type="text" name="first_name" class="form-control" placeholder="Firstname" autofocus>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_profile"></i></span>
-          <input type="text" name="lastname" class="form-control" placeholder="Lastname" autofocus>
+          <input type="text" name="last_name" class="form-control" placeholder="Lastname" autofocus>
         </div>
         <div class="input-group">
           <span class="input-group-addon"><i class="icon_mail"></i></span>
