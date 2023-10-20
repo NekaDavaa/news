@@ -1,4 +1,13 @@
 <?php include '../config/config.php'; ?>
+<?php
+if (isset($_SESSION['admin_user'])) {
+  $user = $_SESSION['admin_user'];
+}
+else {
+header("Location: ../nw-admin.php");
+} 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
