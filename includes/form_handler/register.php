@@ -1,9 +1,7 @@
 <?php
 $mysqli = new mysqli("79.98.104.6","miagodco_toncho","SclGGtN1AY","miagodco_customnews") or die(mysqli_connect_error($mysqli));
 $error = [];
-echo "<pre>";
-print_r($error);
-echo "</pre>";
+
 
 if (isset($_POST['register'])) {
    $first_name = clean($_POST['first_name']);
@@ -15,6 +13,20 @@ if (isset($_POST['register'])) {
    echo "asd";
    array_push($error, "first name and last name are required");
    header("Location: ../../nw-admin.php?message=first_and_last_name_are_rquired");
+   } 
+   elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      array_push($error, "Email is invalid");
+      header("Location: ../../nw-admin.php?message=email_is_rquired");
+   }
+   else {
+      if (empty($pwd)) {
+         array_push($error, "Password is required");
+         header("Location: ../../nw-admin.php?message=password_is_rquired");
+      }
+      elseif (strlen($pwd) <=5) {
+            array_push($error, "Password is too short");
+         header("Location: ../../nw-admin.php?message=password_is_too_short");
+      }
    }
    
 }
