@@ -1,4 +1,5 @@
 <?php include '../config/config.php'; ?>
+<?php include '../class/User.php'; ?>
 <?php
 if (isset($_SESSION['admin_user'])) {
   $user = $_SESSION['admin_user'];
