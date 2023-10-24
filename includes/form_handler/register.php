@@ -52,7 +52,7 @@ if (empty($error)) {
 
  $role = "Admin";
 
- $query = mysqli_query ($mysqli, "INSERT INTO users VALUES ('', '$username', '$first_name', '$last_name', 'email', '$hashedPwd', '$profile_pic', '$role', '0');");
+ $query = mysqli_query ($mysqli, "INSERT INTO users VALUES ('', '$username', '$first_name', '$last_name', '$email', '$hashedPwd', '$profile_pic', '$role', '0');");
  
      if ($query) {
       header("Location: ../../nw-admin.php?message=login_now");
