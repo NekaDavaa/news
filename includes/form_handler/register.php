@@ -35,15 +35,15 @@ if (empty($error)) {
    $rand = rand(1,3);
    switch ($rand) {
       case '1':
-        $profile_pic = "assets/images/profile_pics/default/profile_pic_1";
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_1.jpg";
          break;
 
       case '2':
-        $profile_pic = "assets/images/profile_pics/default/profile_pic_2";
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_2.jpg";
          break;
 
       case '3':
-        $profile_pic = "assets/images/profile_pics/default/profile_pic_3";
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_3.jpg";
          break;
    }
 

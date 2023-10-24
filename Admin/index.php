@@ -73,9 +73,9 @@
         <div class="row">
           <?php 
             $user_obj = new User($connection, $user);
-
             echo $user_obj->getUserName();
           ?>
+          
           <div class="col-lg-9 col-md-12">
             <div class="panel panel-default">
               <div class="panel-heading">
