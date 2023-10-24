@@ -38,8 +38,8 @@
                             <div class="login-search-area d-flex align-items-center">
                                 <!-- Login -->
                                 <div class="login d-flex">
-                                    <a href="#">Login</a>
-                                    <a href="#">Register</a>
+                                    <a href="login.php">Login</a>
+                                    <a href="register.php">Register</a>
                                 </div>
                                 <!-- Search Form -->
                                 <div class="search-form">
