@@ -30,6 +30,36 @@ if (isset($_POST['register'])) {
    }
    
 }
+
+if (empty($error)) {
+   $username = $first_name. " " .$last_name;
+   $hashedPwd = md5($pwd);
+   $rand = rand(1,3);
+   switch ($rand) {
+      case '1':
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_1";
+         break;
+
+      case '2':
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_2";
+         break;
+
+      case '3':
+        $profile_pic = "assets/images/profile_pics/default/profile_pic_3";
+         break;
+   }
+
+
+ $role = "Admin";
+
+ $query = mysqli_query ($mysqli, "INSERT INTO users VALUES ('', '$username', '$first_name', '$last_name', 'email', '$hashedPwd', '$profile_pic', '$role', '0');");
+ 
+     if ($query) {
+      header("Location: ../../nw-admin.php?message=login_now");
+     }
+}
+
+
 function clean($data) {
     global $mysqli;
     $data = htmlspecialchars($data);
