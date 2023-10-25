@@ -19,7 +19,7 @@
      $email = $row['email'];
      $role = $row['role'];
      $num_posts = $row['num_posts'];
-     }
+     } 
      }
     ?>
  
@@ -46,6 +46,11 @@
                   <div class="follow-ava">
                     <img src="../<?php echo $user_obj->getProfilePic(); ?>" alt="">
                   </div>
+                  <form method="POST" action="" enctype="multipart/form-data">
+                    <input type="file" name="profile_pic"/>
+                    <input type="submit" name="upload" class="btn btn-primary" value="Upload" />
+                  </form>
+                  <br /><br />
                   <h6><?php echo $user_obj->getRole(); ?></h6>
                 </div>
               </div>
