@@ -108,7 +108,7 @@
                     <section class="panel">
                       <div class="panel-body bio-graph-info">
                         <h1> Profile Info</h1>
-                        <form class="form-horizontal" role="form">
+                        <form class="form-horizontal" role="form" method="post" action="includes/function.php">
                           <div class="form-group">
                             <label class="col-lg-2 control-label">First Name</label>
                             <div class="col-lg-6">
