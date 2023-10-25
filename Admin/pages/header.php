@@ -6,7 +6,9 @@ if (isset($_SESSION['admin_user'])) {
 }
 else {
 header("Location: ../nw-admin.php");
-} 
+}
+
+$user_obj = new User($connection, $user);
 ?>
 
 <!DOCTYPE html>
