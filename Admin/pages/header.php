@@ -10,7 +10,6 @@ header("Location: ../nw-admin.php");
 
 $user_obj = new User($connection, $user);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
