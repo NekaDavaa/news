@@ -7,7 +7,22 @@
     <!--sidebar start-->
 <?php include 'pages/side_bar.php'; ?>
     <!--sidebar end-->
-
+    <?php 
+     if (isset($_GET['user_id'])){
+      $user_id = $_GET['user_id'];
+      $query = mysqli_query($connection, "SELECT * FROM users WHERE id=$user_id");
+     while ($row = mysqli_fetch_assoc($query)){
+     $id = $row['id'];
+     $username = $row['username'];
+     $firstname = $row['firstname'];
+     $lastname = $row['lastname'];
+     $email = $row['email'];
+     $role = $row['role'];
+     $num_posts = $row['num_posts'];
+     }
+     }
+    ?>
+ 
     <!--main content start-->
     <section id="main-content">
       <section class="wrapper">
@@ -70,7 +85,11 @@
                         <h1>Bio Graph</h1>
                         <div class="row">
                           <div class="bio-row">
-                            <p><span>Username </span>: <?php echo $user_obj->getUserName(); ?> </p>
+                            <p><span>First Name </span>: <?php echo $firstname; ?></p>
+                            <p><span>Last Name </span>: <?php echo $lastname; ?></p>
+                            <p><span>Email </span>: <?php echo $email; ?></p>
+                            <p><span>Role </span>: <?php echo $role; ?></p>
+                            <p><span>Number of Posts </span>: <?php echo $num_posts; ?></p>
                           </div>
                         </div>
                       </div>
@@ -93,62 +112,30 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">First Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="f-name" placeholder=" ">
+                              <input type="text" class="form-control" id="f-name" placeholder=" " value="<?php echo $firstname; ?>">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Last Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="l-name" placeholder=" ">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">About Me</label>
-                            <div class="col-lg-10">
-                              <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Country</label>
-                            <div class="col-lg-6">
-                              <input type="text" class="form-control" id="c-name" placeholder=" ">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Birthday</label>
-                            <div class="col-lg-6">
-                              <input type="text" class="form-control" id="b-day" placeholder=" ">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Occupation</label>
-                            <div class="col-lg-6">
-                              <input type="text" class="form-control" id="occupation" placeholder=" ">
+                              <input type="text" class="form-control" id="l-name" placeholder=" " value="<?php echo $lastname; ?>">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="email" placeholder=" ">
+                              <input type="text" class="form-control" id="email" placeholder=" " value="<?php echo $email; ?>">
                             </div>
                           </div>
                           <div class="form-group">
-                            <label class="col-lg-2 control-label">Mobile</label>
+                            <label class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="mobile" placeholder=" ">
+                              <input type="password" class="form-control" id="email" placeholder="Password">
                             </div>
                           </div>
-                          <div class="form-group">
-                            <label class="col-lg-2 control-label">Website URL</label>
-                            <div class="col-lg-6">
-                              <input type="text" class="form-control" id="url" placeholder="http://www.demowebsite.com ">
-                            </div>
-                          </div>
-
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
-                              <button type="submit" class="btn btn-primary">Save</button>
-                              <button type="button" class="btn btn-danger">Cancel</button>
+                              <input type="submit" name="update_data" value="Save" class="btn btn-primary" />
                             </div>
                           </div>
                         </form>
