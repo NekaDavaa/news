@@ -112,29 +112,30 @@
                           <div class="form-group">
                             <label class="col-lg-2 control-label">First Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="f-name" placeholder=" " value="<?php echo $firstname; ?>">
+                              <input type="text" name="u_firstname" class="form-control" id="f-name" placeholder=" " value="<?php echo $firstname; ?>">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Last Name</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="l-name" placeholder=" " value="<?php echo $lastname; ?>">
+                              <input type="text" name="u_lastname" class="form-control" id="l-name" placeholder=" " value="<?php echo $lastname; ?>">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-6">
-                              <input type="text" class="form-control" id="email" placeholder=" " value="<?php echo $email; ?>">
+                              <input type="text" name="u_email" class="form-control" id="email" placeholder=" " value="<?php echo $email; ?>">
                             </div>
                           </div>
                           <div class="form-group">
                             <label class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-6">
-                              <input type="password" class="form-control" id="email" placeholder="Password">
+                              <input type="password" name="u_password" class="form-control" id="email" placeholder="Password">
                             </div>
                           </div>
                           <div class="form-group">
                             <div class="col-lg-offset-2 col-lg-10">
+                              <input type="hidden" name="user_id" value="<?php echo $user_obj->getID();?>" class="btn btn-primary" />
                               <input type="submit" name="update_data" value="Save" class="btn btn-primary" />
                             </div>
                           </div>
