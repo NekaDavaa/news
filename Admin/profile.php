@@ -45,7 +45,6 @@
             <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
             <ol class="breadcrumb">
               <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-              <li><i class="icon_documents_alt"></i>Pages</li>
               <li><i class="fa fa-user-md"></i>Profile</li>
             </ol>
           </div>

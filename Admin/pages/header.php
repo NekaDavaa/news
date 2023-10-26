@@ -23,7 +23,7 @@ $cat_obj = new Category($connection, $user);
   <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
   <link rel="shortcut icon" href="img/favicon.png">
 
-  <title>Creative - Bootstrap Admin Template</title>
+  <title>Admin Panel - News.bg</title>
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
