@@ -15,6 +15,26 @@
                           <span>Profile</span>
                       </a>
           </li>
+
+            <li class="">
+            <a class="" href="category.php">
+                          <i class="fa fa-suitcase"></i>
+                          <span>Category</span>
+                      </a>
+          </li>
+          
+         <?php 
+            $role = $user_obj->getRole();
+            if ($role === 'Admin'):
+           ?>
+           <li class=''>
+            <a class='' href='add_category.php'>
+                          <i class='fa fa-folder'></i>
+                          <span>Add Category</span>
+                      </a>
+          </li>
+        <?php endif;?>
+
           
 
         </ul>
