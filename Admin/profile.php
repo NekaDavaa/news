@@ -21,14 +21,20 @@
      $num_posts = $row['num_posts'];
      } 
      
+     
      if(isset($_POST['upload']) && isset($_FILES['profile_pic'])) {
        $dir = "../assets/images/profile_pics/default/";
        $target = $dir . basename($_FILES['profile_pic']['name']);
        $type = $_FILES['profile_pic']['type'];
        $size = $_FILES['profile_pic']['size'];
-       if($size > 2000000) {
-         header("Location: profile.php?user_id=$id&message=file_is_large");
-       }else{
+       if(empty($_FILES['profile_pic']['name'])) {
+          header("Location: profile.php?user_id=$id&message=file_empty");
+       }
+      elseif ($size > 2000000) {
+    header("Location: profile.php?user_id=$id&message=file_too_large");
+}
+
+       else{
          move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target);
          mysqli_query($connection, "UPDATE users SET profile_pic='$target' WHERE id=$id");
          header("Location: profile.php?user_id=$id&message=profile_updated");
@@ -38,6 +44,15 @@
     ?>
  
     <!--main content start-->
+    <style>
+       .debug {
+        position: relative;
+        z-index: 999999;
+        background: white;
+        padding: 20px;
+       }
+    </style>
+
     <section id="main-content">
       <section class="wrapper">
         <div class="row">
