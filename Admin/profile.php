@@ -43,14 +43,6 @@
     ?>
  
     <!--main content start-->
-    <style>
-       .debug {
-        position: relative;
-        z-index: 999999;
-        background: white;
-        padding: 20px;
-       }
-    </style>
 
     <section id="main-content">
       <section class="wrapper">
