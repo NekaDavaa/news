@@ -33,7 +33,6 @@
       elseif ($size > 2000000) {
     header("Location: profile.php?user_id=$id&message=file_too_large");
 }
-
        else{
          move_uploaded_file($_FILES['profile_pic']['tmp_name'], $target);
          mysqli_query($connection, "UPDATE users SET profile_pic='$target' WHERE id=$id");
