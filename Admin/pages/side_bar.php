@@ -35,6 +35,18 @@
           </li>
         <?php endif;?>
 
+            <?php 
+            $role = $user_obj->getRole();
+            if ($role === 'Admin'):
+           ?>
+           <li class=''>
+            <a class='' href='add_post.php'>
+                          <i class='fa fa-folder'></i>
+                          <span>Add Post</span>
+                      </a>
+          </li>
+        <?php endif;?>
+
           
 
         </ul>
