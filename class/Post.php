@@ -10,7 +10,9 @@
      }
 
      public function addNews($title, $content, $category, $status, $type, $tags, $image) {
-                        
+            if (!empty($title) && !empty($content)) {
+                    
+            }            
      }
  
 
