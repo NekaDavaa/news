@@ -63,13 +63,15 @@
 
     public function getAllCategory() {
       
-    $sql = mysqli_query($this->conn, "SELECT * FROM category");
-    $result = mysqli_fetch_array($sql); 
-     $str = "";
-     while ($result) {
-          $cat_title = $result['cat_title'];
-          $cat_id = $result['cat_id'];
+    $query = mysqli_query($this->conn, "SELECT * FROM category");
+    $str = ""; 
+     while ($row = mysqli_fetch_array($query)) {
+          $cat_id = $row['id'];
+          $cat_title = $row['cat_title'];
+          $str .= "<li><a href='category.php?c_id=$cat_id'>$cat_title</a></li>";
      }
+     echo $str;
+    
 
      
  }    
