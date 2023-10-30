@@ -41,8 +41,8 @@
            ?>
            <li class=''>
             <a class='' href='add_post.php'>
-                          <i class='fa fa-folder'></i>
-                          <span>Add Post</span>
+                          <i class='fa fa-globe'></i>
+                          <span>Add News</span>
                       </a>
           </li>
         <?php endif;?>
