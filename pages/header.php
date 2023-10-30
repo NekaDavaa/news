@@ -1,4 +1,6 @@
 <?php include_once 'config/config.php'; ?>
+<?php include 'class/User.php'; ?>
+<?php include 'class/Category.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
