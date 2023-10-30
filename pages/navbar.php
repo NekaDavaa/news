@@ -26,6 +26,7 @@
                             <div class="classynav">
                                 <ul>
                                     <li class="active"><a href="index.php">Home</a></li>
+                                    <?php // $cat_obj->getAllCategory(); ?>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>

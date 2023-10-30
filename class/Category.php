@@ -8,7 +8,7 @@
  		$this->user_obj = new User($conn, $user);
  	}
 
-     public function addCategory($category) {
+    public function addCategory($category) {
  		if (!empty($category)) {
  			$query = mysqli_query($this->conn, "INSERT INTO category VALUES('','$category');");
  			($query) ?  true :  false;
@@ -17,7 +17,7 @@
  		}
  	}
 
-     public function getAdminCategory() {
+    public function getAdminCategory() {
            $query = mysqli_query($this->conn, "SELECT * from category order by cat_title ASC");
            $str = '';
            $role = $this->user_obj->getRole();
@@ -43,7 +43,7 @@
         echo $str;
     }
      
-     public function updateCategory($id, $category) {
+    public function updateCategory($id, $category) {
  		$query = mysqli_query($this->conn, "UPDATE category SET cat_title='$category' WHERE id=$id");
  		if ($query) {
  			return true;
@@ -60,4 +60,17 @@
  			return false;
  		}
  	}
- }
+
+    public function getAllCategory() {
+      
+    $sql = mysqli_query($this->conn, "SELECT * FROM category");
+    $result = mysqli_fetch_array($sql); 
+     $str = "";
+     while ($result) {
+          $cat_title = $result['cat_title'];
+          $cat_id = $result['cat_id'];
+     }
+
+     
+ }    
+}

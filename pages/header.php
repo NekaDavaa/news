@@ -1,6 +1,9 @@
 <?php include_once 'config/config.php'; ?>
+<?php $user = $_SESSION['admin_user']; ?>
 <?php include 'class/User.php'; ?>
-<?php include 'class/Category.php'; ?>
+<?php include 'class/Category.php'; 
+$cat_obj = new Category($connection, $user);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
