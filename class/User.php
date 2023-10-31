@@ -29,4 +29,11 @@ class User {
       $profile_id = $this->user['id'];
       return $profile_id;
 	}
+
+	public function getNumPosts(){
+ 		$username = $this->user['username'];
+ 		$sql = mysqli_query($this->conn, "SELECT * FROM news WHERE added_by='$username'");
+ 		$num_posts = mysqli_num_rows($sql);
+ 		return $num_posts;
+ 	 	}
 }

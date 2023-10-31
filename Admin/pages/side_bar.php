@@ -47,6 +47,19 @@
           </li>
         <?php endif;?>
 
+          <?php 
+            $role = $user_obj->getRole();
+            if ($role === 'Admin'):
+           ?>
+           <li class=''>
+            <a class='' href='addusers.php'>
+                          <i class='fa fa-users'></i>
+                          <span>Add Users</span>
+                      </a>
+                      
+          </li>
+        <?php endif;?>
+
           
 
         </ul>
