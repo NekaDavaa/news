@@ -9,11 +9,11 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
- 
+    
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Featured Post Area Start ##### -->
-    <?php require 'pages/searchposts.php' ?>
+    <?php require 'pages/catposts.php' ?>
     <!-- ##### Featured Post Area End ##### -->
 
     <!-- ##### Popular News Area Start ##### -->
