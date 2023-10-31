@@ -56,9 +56,8 @@ $post_obj = new Post($connection, $user);
                                 </div>
                                 <!-- Search Form -->
                                 <div class="search-form">
-                                    <form action="#" method="post">
-                                        <input type="search" name="search" class="form-control" placeholder="Search">
-                                        <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <form action="search.php" method="get">
+                                        <input type="text" name="s" class="form-control" placeholder="  Search">
                                     </form>
                                 </div>
                             </div>

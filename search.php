@@ -13,12 +13,15 @@
     <!-- ##### Hero Area End ##### -->
 
     <!-- ##### Featured Post Area Start ##### -->
-    <?php require 'pages/featureposts.php' ?>
+    <?php require 'pages/searchposts.php' ?>
     <!-- ##### Featured Post Area End ##### -->
 
     <!-- ##### Popular News Area Start ##### -->
     <?php require 'pages/popularnews.php' ?>
     <!-- ##### Popular News Area End ##### -->
+
+    
+
 
     <!-- ##### Editorial Post Area Start ##### -->
     <?php require 'pages/editorial.php' ?>
