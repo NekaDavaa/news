@@ -41,14 +41,14 @@
                 $likes = $row['num_likes'];
                 $comments = $row['num_comments'];
                 $date_added = $row['date'];
-
+                 $views = $row['num_views'];
                 $date_time_now = date("Y-m-d H:i:s");
                 $startCount = new DateTime($date_added);
                 $endCount = new DateTime($date_time_now);
                 $interval = $startCount->diff($endCount);
                 if($interval->h <= 10 && $interval->d < 1) {
-                    $rand = rand(5,7);
-                    $str .= "<div class='col-12 col-lg-$rand'>
+                   // $rand = rand(5,7);
+                    $str .= "<div class='col-12 col-lg-5'>
                             <div class='single-blog-post featured-post-2'>
                                 <div class='post-thumb'>
                                     <a href='single-post.php?post_id=$id&cat_r=$cat_title'><img src='Admin/$image'></a>
@@ -61,7 +61,8 @@
                                         </a>
                                         <div class='d-flex align-items-center'>
                                             <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$likes</span></a>
-                                            <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$comments</span></a>
+                                            <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +119,7 @@
                 $num_comments = $row['num_comments'];
                 $cat_id = $row['post_cat_id'];
                 $cat_title = $row['post_category'];
-
+                 $views = $row['num_views'];
                 $str .= "<div class='col-12 col-md-6'>
                             <div class='single-blog-post style-3'>
                                 <div class='post-thumb'>
@@ -131,7 +132,8 @@
                                         </a>
                                     <div class='post-meta d-flex align-items-center'>
                                         <a href='' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
-                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>
+                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +160,7 @@
                 $image = $row['post_image'];
                 $num_likes = $row['num_likes'];
                 $num_comments = $row['num_comments'];
-
+                $views = $row['num_views'];
                 $str .= "<div class='col-12 col-md-6'>
                             <div class='single-blog-post style-3'>
                                 <div class='post-thumb'>
@@ -171,7 +173,8 @@
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
                                         <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
-                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>
+                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
                                 </div>
                             </div>
@@ -234,6 +237,86 @@
 
                         return $str;
         }
-     
 
+        public function getPopularNews() 
+        {
+            $query = mysqli_query($this->conn, "SELECT * FROM news WHERE timestamped>DATE_SUB(curdate(),INTERVAL 1 WEEK) ORDER BY num_views DESC LIMIT 10");
+            $str = "";
+            while ($row = mysqli_fetch_array($query)) {
+                $id = $row['id'];
+                $content = $row['content'];
+                if (strlen($content) > 200) {
+                    $content = substr($content, 0, 200) . "...";
+                }
+                $category = $row['post_category'];
+                $image = $row['post_image'];
+                $num_likes = $row['num_likes'];
+                $post_cat_id = $row['post_cat_id'];
+                $num_comments = $row['num_comments'];
+                $views = $row['num_views'];
+                $str .= "<div class='col-12 col-md-6'>
+                            <div class='single-blog-post style-3'>
+                                <div class='post-thumb'>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category'><img src='Admin/$image'></a>
+                                </div>
+                                <div class='post-data'>
+                                    <a href='category.php?c_id=$post_cat_id' class='post-catagory'>$category</a>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category' class='post-title'>
+                                        <h6>$content</h6>
+                                    </a>
+                                    <div class='post-meta d-flex align-items-center'>
+                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+            }
+            echo $str;
+        }
+     
+public function getNewsByTags($tag)
+        {
+            $query = mysqli_query($this->conn, "SELECT * FROM news WHERE tags LIKE '%$tag%' ORDER BY id DESC LIMIT 10");
+            $str = "";
+        if (mysqli_num_rows($query) === 0) {
+            $str = "<h2 class='text-center text-danger'>No results found!</h2>";
+        }   
+        else {
+            while ($row = mysqli_fetch_array($query)) {
+                $id = $row['id'];
+                $content = $row['content'];
+                if (strlen($content) > 200) {
+                    $content = substr($content, 0, 200) . "...";
+                }
+                $category = $row['post_category'];
+                $image = $row['post_image'];
+                $post_cat_id = $row['post_cat_id'];
+                $num_likes = $row['num_likes'];
+                $num_comments = $row['num_comments'];
+                $views = $row['num_views'];
+
+                $str .= "<div class='col-12 col-md-6'>
+                            <div class='single-blog-post style-3'>
+                                <div class='post-thumb'>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category'><img src='Admin/$image'></a>
+                                </div>
+                                <div class='post-data'>
+                                    <a href='category.php?c_id=$post_cat_id' class='post-catagory'>$category</a>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category' class='post-title'>
+                                        <h6>$content</h6>
+                                    </a>
+                                    <div class='post-meta d-flex align-items-center'>
+                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>";
+            }
+        }
+            echo $str;
+        }
  }

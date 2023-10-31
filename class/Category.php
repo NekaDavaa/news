@@ -95,6 +95,7 @@
                     $num_likes = $row['num_likes'];
                     $num_comments = $row['num_comments'];
                     $cat_id = $row['post_cat_id'];
+                    $views = $row['num_views'];
 
 
                     $str .= "<div class='col-12 col-md-6'>
@@ -109,7 +110,8 @@
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
                                         <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
-                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>
+                                        <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
+                                            <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
                                 </div>
                             </div>
