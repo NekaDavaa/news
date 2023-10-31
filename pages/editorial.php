@@ -21,7 +21,7 @@
                     </div>
 
                     <!-- Single Post -->
-                    <?php //$post_obj->getWorldNews(); ?>
+                    <?php $post_obj->getWorldNews(); ?>
 
                     
                 </div>

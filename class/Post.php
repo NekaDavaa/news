@@ -319,4 +319,56 @@ public function getNewsByTags($tag)
         }
             echo $str;
         }
+
+public function getWorldNews() {
+            $query = mysqli_query($this->conn, "SELECT * FROM news WHERE post_category='International News' ORDER BY id DESC LIMIT 5");
+            $str = "";
+            while ($row = mysqli_fetch_assoc($query)) {
+                $id = $row['id'];
+                $content = substr($row['content'], 0, 50) . "...";
+                $image = $row['post_image'];
+                $date = $row['date'];
+                $category = $row['post_category'];
+                $post_cat_id = $row['post_cat_id'];
+                $str .= "<div class='single-blog-post style-2'>
+                        <div class='post-thumb'>
+                            <a href='single-post.php?post_id=$id&cat_r=$category'><img src='Admin/$image'></a>
+                        </div>
+                        <div class='post-data'>
+                            <a href='single-post.php?post_id=$id&cat_r=$category' class='post-title'>
+                                <h6>$content</h6>
+                            </a>
+                            <div class='post-meta'>
+                                <div class='post-date'><a href=''>$date</a></div>
+                            </div>
+                        </div>
+                    </div>";
+            }
+            echo $str;
+        }
+
+        public function getRecentNews() 
+        {
+            $query = mysqli_query($this->conn, "SELECT * FROM news WHERE timestamped>DATE_SUB(curdate(),INTERVAL 1 WEEK) ORDER BY num_views DESC LIMIT 4");
+            $str = "";
+            while ($row = mysqli_fetch_array($query)) {
+                $id = $row['id'];
+                $content = $row['content'];
+                if (strlen($content) > 200) {
+                    $content = substr($content, 0, 50) . "...";
+                }
+                $category = $row['post_category'];
+                $date_added = $row['date'];
+                $post_cat_id = $row['post_cat_id'];
+
+                $str .= " <div class='single-popular-post'>
+                            <a href='single-post.php?post_id=$id&cat_r=$category'>
+                                <h6>$content</h6>
+                            </a>
+                            <p>$date_added</p>
+                        </div>";
+            }
+            echo $str;
+        }
+
  }
