@@ -1,13 +1,16 @@
 <?php include_once 'config/config.php'; ?>
 <?php include 'class/User.php'; ?>
 <?php 
-$user = null;
+$user = "user";
 if (isset($_SESSION['admin_user']) ) {
     $user = $_SESSION['admin_user']; 
 }
 ?>
 <?php include 'class/Category.php'; 
 $cat_obj = new Category($connection, $user);
+?>
+<?php include 'class/Post.php'; 
+$post_obj = new Post($connection, $user);
 ?>
 <!DOCTYPE html>
 <html lang="en">
