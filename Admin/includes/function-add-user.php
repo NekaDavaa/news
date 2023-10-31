@@ -31,7 +31,7 @@ function addUsers(){
 			header("Location: ../addusers.php?message=password_is_short");
 		} else{
 			$hashPwd = md5($pwd);
-			$ProfilePic = '../assets/images/profile_pics/default/head_1.png';
+			$ProfilePic = '../assets/images/profile_pics/default/profile_pic_1.jpg';
 			$username = $fname . ' ' .$lname;
 			$query = mysqli_query($connection, "INSERT INTO users VALUES('','$username','$fname','$lname','$email','$hashPwd','$ProfilePic','$role','0')");
 			if($query){
