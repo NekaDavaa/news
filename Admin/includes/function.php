@@ -2,8 +2,9 @@
 //This pass connection and sessionstart()
 include '../../config/config.php';
 //Function that update user data
+function updateUser() {
 if (isset($_POST['update_data'])) {
-	function updateUser() {
+	
 		global $connection;
 		$u_user_id = $_POST['user_id'];
 		$u_firstname = $_POST['u_firstname'];
@@ -14,14 +15,12 @@ if (isset($_POST['update_data'])) {
         $sql = mysqli_query($connection, "UPDATE users SET username='$u_username', firstname='$u_firstname', lastname='$u_lastname', email='$u_email', password='$u_password' WHERE id='$u_user_id'");
         $_SESSION['admin_user'] = $u_username;
         header("Location: ../profile.php?user_id=$u_user_id");
-	}
+        }
 }
+	
+
 updateUser();
 
-
-?>
-
-<?php
 
 function clean($data){
 	global $connection;
@@ -69,8 +68,3 @@ function addUsers(){
 }
 
 addUsers();
-
-
-
-
-
