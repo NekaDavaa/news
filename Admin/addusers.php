@@ -25,7 +25,7 @@
           <div class="card card-body bg-light">
             <h3>Add Users</h3>
             <p>Fill in all details</p>
-            <form action="includes/function.php" method="POST">
+            <form action="includes/function-add-user.php" method="POST">
               <div class="form-group">
                 <input class="form-control form-control-lg" type="text" placeholder="Firstname" name="fname">
               </div>
