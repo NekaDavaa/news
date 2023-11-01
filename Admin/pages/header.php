@@ -3,6 +3,7 @@
 <?php include '../class/Category.php'; ?>
 <?php include '../class/Post.php'; ?>
 <?php include '../class/Comment.php'; ?>
+<?php include '../class/Misc.php'; ?>
 <?php
 if (isset($_SESSION['admin_user'])) {
   $user = $_SESSION['admin_user'];
@@ -15,6 +16,7 @@ $user_obj = new User($connection, $user);
 $cat_obj = new Category($connection, $user);
 $post_obj = new Post($connection, $user);
 $comment_obj = new Comment($connection);
+$misc_obj = new Misc($connection);
 ?>
 <!DOCTYPE html>
 <html lang="en">

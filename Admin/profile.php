@@ -102,9 +102,6 @@
                   <!-- profile -->
                   <div id="profile" class="tab-pane active">
                     <section class="panel">
-                      <div class="bio-graph-heading">
-                        Hello I’m Jenifer Smith, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
-                      </div>
                       <div class="panel-body bio-graph-info">
                         <h1>Bio Graph</h1>
                         <div class="row">
