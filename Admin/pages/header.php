@@ -2,6 +2,7 @@
 <?php include '../class/User.php'; ?>
 <?php include '../class/Category.php'; ?>
 <?php include '../class/Post.php'; ?>
+<?php include '../class/Comment.php'; ?>
 <?php
 if (isset($_SESSION['admin_user'])) {
   $user = $_SESSION['admin_user'];
@@ -13,6 +14,7 @@ header("Location: ../nw-admin.php");
 $user_obj = new User($connection, $user);
 $cat_obj = new Category($connection, $user);
 $post_obj = new Post($connection, $user);
+$comment_obj = new Comment($connection);
 ?>
 <!DOCTYPE html>
 <html lang="en">

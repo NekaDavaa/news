@@ -12,6 +12,9 @@ $cat_obj = new Category($connection, $user);
 <?php include 'class/Post.php'; 
 $post_obj = new Post($connection, $user);
 ?>
+<?php include 'class/Comment.php'; 
+$comment_obj = new Comment($connection);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
