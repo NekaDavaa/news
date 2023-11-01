@@ -33,7 +33,7 @@
 		}
 
 		public function loadComments(){
-			$sql = mysqli_query($this->conn, "SELECT * FROM comments ORDER BY status DESC");
+			$sql = mysqli_query($this->conn, "SELECT * FROM comments");
 			while ($row = mysqli_fetch_assoc($sql)) {
 				$id = $row['id'];
 				$post_id = $row['post_id'];
