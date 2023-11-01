@@ -48,12 +48,18 @@
 					<td><?php echo $name;?></td>
 					<td><?php echo $email;?></td>
 					<td><?php echo $body;?></td>
-					<td><?php echo $status;?></td>
+                     <?php 
+                      if ($status === "approved") {
+                      echo "<td><p class='text-success'>$status</p></td>";  }
+                       else {
+                         echo "<td><p>$status</p></td>"; }
+                     ?>
+					
 					<?php
 						if($status === "unapproved"){
-							echo "<td><a href='includes/function.php?a_com_id=$id' class='btn btn-primary'>Approve</a></td>";
+							echo "<td><a href='includes/function-approve-comments.php?a_com_id=$id' class='btn btn-primary'>Approve</a></td>";
 						}else{
-							echo "<td><a href='includes/function.php?u_com_id=$id' class='btn btn-danger'>Unapprove</a></td>";
+							echo "<td><a href='includes/function-approve-comments.php?u_com_id=$id' class='btn btn-danger'>Unapprove</a></td>";
 						}
 					?>
 
