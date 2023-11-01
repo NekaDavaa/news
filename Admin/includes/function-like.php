@@ -7,14 +7,16 @@ if(isset($_GET['like_id'])){
 		$query = mysqli_query($conn, "SELECT * FROM likes WHERE post_id=$id AND user='$user'");
 		if(mysqli_num_rows($query) == 0){
 			$sql = mysqli_query($conn, "INSERT INTO likes VALUES('','$user','$id','like');");
-			if($sql){
-				$stmt = mysqli_query($conn, "SELECT num_likes FROM news WHERE id=$id"); //pull
-				$row = mysqli_fetch_array($stmt);//modify
-				$num_likes = $row['num_likes'];//modifying
-				$num_likes++;//modified
+			  if($sql){
+			  	$stmt = mysqli_query($conn, "SELECT num_likes FROM news WHERE id=$id"); //pull
+			  	$row = mysqli_fetch_array($stmt);//modify
+			  	$num_likes = $row['num_likes'];//modifying
+			  	$num_likes++;//modified
 				$sql = mysqli_query($conn, "UPDATE news SET num_likes='$num_likes' WHERE id=$id");//push
-			}
-		}else{
+			                    }
+		}
+
+		else{
 
 			$query = mysqli_query($conn, "SELECT * FROM likes WHERE post_id=$id AND user='$user'");
 			$row = mysqli_fetch_array($query);
