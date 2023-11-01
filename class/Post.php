@@ -60,7 +60,7 @@
                                             <h6>$content</h6>
                                         </a>
                                         <div class='d-flex align-items-center'>
-                                            <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$likes</span></a>
+                                            <a href='index.php?like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$likes</span></a>
                                             <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                         </div>

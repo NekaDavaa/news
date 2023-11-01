@@ -1,5 +1,6 @@
 <?php include_once 'config/config.php'; ?>
 <?php include 'class/User.php'; ?>
+<?php include 'Admin/includes/function-like.php'; ?>
 <?php 
 $user = "user";
 if (isset($_SESSION['admin_user']) ) {
@@ -53,10 +54,21 @@ $comment_obj = new Comment($connection);
                             <!-- Login Search Area -->
                             <div class="login-search-area d-flex align-items-center">
                                 <!-- Login -->
-                                <div class="login d-flex">
-                                    <a href="login.php">Login</a>
-                                    <a href="register.php">Register</a>
-                                </div>
+                                <?php
+                                      if (isset($_SESSION['subscriber'])){
+                                        $sub = $_SESSION['subscriber'];
+                                       echo '<div class="login d-flex">'.
+                                         '<a>Welcome ' . $sub . '</a>'.
+                                         '<a href="logout.php?logout">Logout</a>'.
+                                         '</div>';
+                                      }
+                                      else {
+                                        echo '<div class="login d-flex">
+                                    <a href="slogin.php">Login</a>
+                                    <a href="sregister.php">Register</a>
+                                </div>';
+                                      }
+                                ?>
                                 <!-- Search Form -->
                                 <div class="search-form">
                                     <form action="search.php" method="get">
