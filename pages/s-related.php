@@ -10,23 +10,21 @@
                     $num_likes = $row['num_likes'];
                     $num_comments = $row['num_comments'];
                     $category = $row['post_category'];
+                    $cat_id = $row['post_cat_id'];
                     ?>
 
                     <!--Related News-->
                     <div class="col-12 col-md-6">
                 <div class="single-blog-post style-3 mb-80">
                     <div class="post-thumb">
-                        <a href="#"><img src="<?php echo "Admin/$image"; ?>" alt=""></a>
+                        <a href="single-post.php?post_id=<?php echo $id; ?>&cat_r=<?php echo $cat_id; ?>"><img src="<?php echo "Admin/$image"; ?>" alt=""></a>
                     </div>
                     <div class="post-data">
-                        <a href="#" class="post-catagory"><?php echo $category; ?></a>
-                        <a href="#" class="post-title">
+                        <a href="category.php?c_id=<?php echo $cat_id; ?>" class="post-catagory"><?php echo $category; ?></a>
+                        <a href="single-post.php?post_id=<?php echo $id ?>&cat_r=<?php echo $cat_id; ?>" class="post-title">
                             <h6><?php echo $content; ?></h6>
                         </a>
-                        <div class="post-meta d-flex align-items-center">
-                            <a href="#" class="post-like"><img src="img/core-img/like.png" alt=""> <span><?php echo $num_likes; ?></span></a>
-                            <a href="#" class="post-comment"><img src="img/core-img/chat.png" alt=""> <span><?php echo $num_comments; ?></span></a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

@@ -62,6 +62,13 @@ $comment_obj = new Comment($connection);
                                          '<a href="logout.php?logout">Logout</a>'.
                                          '</div>';
                                       }
+                                      elseif (isset($_SESSION['admin_user'])){
+                                       echo '<div class="login d-flex">
+                                    <a href="admin">Back to Admin</a>
+                                </div>';
+                                      
+                                      }
+
                                       else {
                                         echo '<div class="login d-flex">
                                     <a href="slogin.php">Login</a>

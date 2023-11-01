@@ -131,7 +131,7 @@
                                             <h6>$content</h6>
                                         </a>
                                     <div class='post-meta d-flex align-items-center'>
-                                        <a href='' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='index.php?like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
                                         <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
@@ -160,19 +160,20 @@
                 $image = $row['post_image'];
                 $num_likes = $row['num_likes'];
                 $num_comments = $row['num_comments'];
+                $post_cat_id = $row['post_cat_id'];
                 $views = $row['num_views'];
                 $str .= "<div class='col-12 col-md-6'>
                             <div class='single-blog-post style-3'>
                                 <div class='post-thumb'>
-                                    <a href='#'><img src='Admin/$image'></a>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category'><img src='Admin/$image'></a>
                                 </div>
                                 <div class='post-data'>
-                                    <a href='#' class='post-catagory'>$category</a>
-                                    <a href='#' class='post-title'>
+                                    <a href='category.php?c_id=$post_cat_id' class='post-catagory'>$category</a>
+                                    <a href='single-post.php?post_id=$id&cat_r=$category' class='post-title'>
                                         <h6>$content</h6>
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
-                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                      
                                         <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
@@ -226,7 +227,7 @@
 
                                         <!-- Post Like & Post Comment -->
                                         <div class='d-flex align-items-center post-like--comments'>
-                                            <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                            <a href='single-post.php?post_id=$id&cat_r=$post_category&like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
                                             <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                         </div>
@@ -265,7 +266,7 @@
                                         <h6>$content</h6>
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
-                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='index.php?like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
                                         <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                     </div>
@@ -308,7 +309,7 @@ public function getNewsByTags($tag)
                                         <h6>$content</h6>
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
-                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='index.php?like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
                                         <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                     </div>

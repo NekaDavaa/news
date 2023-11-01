@@ -109,7 +109,7 @@
                                         <h6>$content</h6>
                                     </a>
                                     <div class='post-meta d-flex align-items-center'>
-                                        <a href='#' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
+                                        <a href='category.php?c_id=$cat_id&like_id=$id' class='post-like'><img src='img/core-img/like.png'> <span>$num_likes</span></a>
                                         <a href='#' class='post-comment'><img src='img/core-img/chat.png'> <span>$num_comments</span></a>&nbsp; &nbsp;
                                             <span><i class='fa fa-eye'></i> $views</span>
                                     </div>

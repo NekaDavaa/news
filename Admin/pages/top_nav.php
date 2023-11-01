@@ -11,9 +11,7 @@
         <!--  search form start -->
         <ul class="nav top-menu">
           <li>
-            <form class="navbar-form">
-              <input class="form-control" placeholder="Search" type="text">
-            </form>
+            <a href="../index.php">Visit The Website</a>
           </li>
         </ul>
         <!--  search form end -->
