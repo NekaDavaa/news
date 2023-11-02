@@ -88,7 +88,7 @@ if(isset($_GET['post_id']) && isset($_GET['cat_r'])){
         $website = $_POST['website'];
 
         if($comment_obj->addComment($name, $email, $body, $website, $id)){
-            $msg = "<div class='alert alert-success'>You comment was added and will soon be approved by the admin</div>";
+            $msg = "<div class='alert alert-success'>Your comment was added and will soon be approved by the admin</div>";
         }else{
             return false;
         }

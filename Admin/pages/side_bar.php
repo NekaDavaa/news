@@ -23,6 +23,26 @@
                       </a>
           </li>
           
+            <li class=''>
+            <a class='' href='comments.php'>
+                <i class='fa fa-comments'></i>
+               
+                <?php
+                  $sql = mysqli_query($connection, "SELECT * FROM comments WHERE status='unapproved'");
+                  $num = mysqli_num_rows($sql);
+                  if($num > 0){
+                    echo "<span>Comments <i class='text-info'>$num</i><sup>new</sup></span>";
+                  }else{
+                    echo "<span>Comments</span>";
+                  }
+                ?>
+
+                
+            </a>       
+          </li>
+
+
+
          <?php 
             $role = $user_obj->getRole();
             if ($role === 'Admin'):
@@ -60,23 +80,7 @@
           </li>
         <?php endif;?>
 
-         <li class=''>
-            <a class='' href='comments.php'>
-                <i class='fa fa-comments'></i>
-               
-                <?php
-                  $sql = mysqli_query($connection, "SELECT * FROM comments WHERE status='unapproved'");
-                  $num = mysqli_num_rows($sql);
-                  if($num > 0){
-                    echo "<span>Comments <i class='text-info'>$num</i><sup>new</sup></span>";
-                  }else{
-                    echo "<span>Comments</span>";
-                  }
-                ?>
-
-                
-            </a>       
-          </li>
+       
 
           
 
