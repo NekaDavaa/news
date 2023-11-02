@@ -1,0 +1,7 @@
+Customer:
+email: customer@abv.bg
+pass: asd123
+
+Admin:
+email: info@weband.bg
+pass: admin123
